@@ -11,15 +11,11 @@ function flowInit () {
 	function mouseScroll(ev){
 		$(document).off("mousewheel", mouseScroll);
 		ev.preventDefault();
-		var scrollerNow = $(window).scrollTop();
-		if(scroller > scrollerNow){
-			rightFlow();
-		}else if(scrollerNow == 0){
+		if(ev.originalEvent.wheelDelta > 0){
 			rightFlow();
 		}else{
 			leftFlow();
 		}
-		scroller = scrollerNow;
 		setTimeout(function(){
 			$(document).on("mousewheel", mouseScroll);
 		}, 500);
