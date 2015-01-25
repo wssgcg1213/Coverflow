@@ -1,29 +1,34 @@
+(function(){
+$(".center a[rel!=link]:has(img)").slimbox();   //init slimbox
+
 var scroller = 0;
 function flowInit () {
-	$(".previous").on("click", leftFlow);
-	$(".next").on("click", rightFlow);
-	$(".left2").live("click", rightFlow);;
-	$(".left1").live("click", rightFlow);;
-	$(".center");
-	$(".right1").live("click", leftFlow);
-	$(".right2").live("click", leftFlow);
-	$(document).on("mousewheel", mouseScroll);
-	function mouseScroll(ev){
-		$(document).off("mousewheel", mouseScroll);
-		ev.preventDefault();
-		if(ev.originalEvent.wheelDelta > 0){
-			rightFlow();
-		}else{
-			leftFlow();
-		}
-		setTimeout(function(){
-			$(document).on("mousewheel", mouseScroll);
-		}, 500);
-	}
-    document.addEventListener('touchstart',touches,false);
-    document.addEventListener('touchend',touches,false);
+    $(".previous").on("click", leftFlow);
+    $(".next").on("click", rightFlow);
+    $(".left2").live("click", rightFlow);
+    $(".left1").live("click", rightFlow);
+
+    $(".right1").live("click", leftFlow);
+    $(".right2").live("click", leftFlow);
+    $(document).on("mousewheel", mouseScroll);
+    function mouseScroll(ev){
+        $(document).off("mousewheel", mouseScroll);
+        ev.preventDefault();
+        if(ev.originalEvent.wheelDelta > 0){
+            rightFlow();
+        }else{
+            leftFlow();
+        }
+        setTimeout(function(){
+            $(document).on("mousewheel", mouseScroll);
+        }, 500);
+    }
+    document.addEventListener('touchstart', touches, false);
+    document.addEventListener('touchend', touches, false);
+
     function touches(ev){
-        if(ev.touches.length==1){
+        console.log(ev)
+        if(ev.touches.length == 1){
             switch(ev.type){
                 case 'touchstart':
                     window.tx = ev.touches[0].clientX;
@@ -33,7 +38,6 @@ function flowInit () {
                     if(temp > 0){rightFlow()};
                     if(temp < 0){leftFlow()};
                     break;
-
             }
         }
     }
@@ -58,7 +62,8 @@ function leftFlow(ev) {
 	$(".center").removeClass('center').addClass('left1');
 	$(".right1").removeClass('right1').addClass('center');
 	$(".tempL").removeClass('tempL').addClass('right1');
-
 }
 
 flowInit();
+
+})();

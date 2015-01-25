@@ -246,8 +246,3 @@
 	}
 
 })(jQuery);
-
-
-jQuery(document).ready(function($){
-	$(".center a[rel!=link]:has(img)").slimbox();
-});
