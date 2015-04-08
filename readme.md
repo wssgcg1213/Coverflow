@@ -1,5 +1,7 @@
 #CoverFlow
-[DEMO]: http://old.zeroling.com/galleries
+---
+
+http://old.zeroling.com/galleries
 
 一个模仿苹果专辑 coverflow 的demo (作于2014年2月6日).
 
