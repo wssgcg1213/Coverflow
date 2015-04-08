@@ -1,5 +1,7 @@
 #CoverFlow
-[DEMO]: http://test.treeforests.com/coverflow
+[DEMO]: http://old.zeroling.com/galleries
+
+一个模仿苹果专辑 coverflow 的demo (作于2014年2月6日).
 
 >A beautiful gallery modelled after Apple's CoverFlow.  
 >Built on Flat-UI based on Bootstraps  
@@ -15,5 +17,4 @@
 >height: 480px;
 
 
-[B1ackRainFlake]: http://gp.treeforests.com
-[B1ackRainFlake]: http://test.treeforests.com
+[Ling]: http://zeroling.com
